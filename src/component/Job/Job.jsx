@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import {BiMap} from "react-icons/bi"
 import {AiFillDollarCircle} from "react-icons/ai"
+import { Link } from "react-router-dom";
 const Job = ({ job }) => {
-    const { logo, job_title, company_name, location, remote_or_onsite, job_type, salary } = job;
+    const { id, logo, job_title, company_name, location, remote_or_onsite, job_type, salary } = job;
     return (
         <div className="card bg-base-100 shadow-xl">
             <div className="card-body">
@@ -28,7 +29,7 @@ const Job = ({ job }) => {
                     </div>
                 </div>
                 <div className="card-actions justify-start">
-                    <button className="bg-[#7E90FE] px-4 py-2 rounded-lg font-semibold text-white">Veiw Detail</button>
+                    <Link to={`/job.${id}`}><button className="bg-[#7E90FE] px-4 py-2 rounded-lg font-semibold text-white">Veiw Detail</button></Link>
                 </div>
             </div>
         </div>
